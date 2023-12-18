@@ -1,0 +1,253 @@
+/*-Font-*/
+@font-face {
+    font-family: GelreCheckinFont;
+    src: url(mijnfont.ttf);
+}
+
+/*-Animatie-*/
+@keyframes OpstartAnimatie {
+    0% {
+        transform: translateY(-100%);
+
+        opacity: 0%;
+
+    }
+
+    50% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        opacity: 100%;
+
+    }
+}
+
+
+/*-Layout van de Website-*/
+body {
+    font-family: GelreCheckinFont;
+    background-image: url(../Vliegtuiga.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    color: rgb(255, 255, 255);
+    animation: 2s ease-out 0s 1 OpstartAnimatie;
+
+}
+
+
+article,
+aside {
+    margin-bottom: 1rem;
+}
+
+footer,
+td {
+
+    text-align: center;
+    padding: 1rem 0;
+    border: 0.1rem solid black;
+}
+
+header,
+article,
+aside,
+footer {
+    background-color: #0b324c;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.571);
+    opacity: 90%;
+    transition: 500ms ease-in-out;
+}
+
+header:hover,
+article:hover,
+aside:hover,
+footer:hover {
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1rem 0 rgba(0, 0, 0);
+    opacity: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 1rem;
+}
+
+article,
+aside {
+    display: flex;
+    flex-flow: wrap column;
+    align-items: center;
+
+}
+
+h1,
+h2,
+h3,
+.center {
+    text-align: center;
+}
+
+/*-Foto's veranderen van grootte-*/
+.logo {
+    width: 14rem;
+
+}
+
+/*-Nav Bar-*/
+nav {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(6, 70, 100);
+}
+
+ul {
+
+    padding: 0;
+    display: flex;
+    list-style-position: inside;
+    list-style-type: none;
+    align-items: baseline;
+    flex-wrap: wrap;
+}
+
+ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+ul li:hover>ul {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    margin-top: 3.2rem;
+}
+
+ul li ul {
+    display: none;
+}
+
+
+
+
+/*-Links-*/
+a {
+    padding: 1rem;
+    margin: 0.1em 0em;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    border: 0.1rem solid rgb(0, 0, 0);
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1rem 0 rgba(0, 0, 0, 0.571);
+    transition: 500ms ease-in-out;
+    text-align: center;
+}
+
+a.active {
+    background-color: #1a9dee;
+
+}
+
+/*-Forms opbouw-*/
+form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
+
+form>div {
+    display: flex;
+    flex-flow: wrap column;
+    margin: 1rem;
+    margin-right: 5rem;
+    margin-left: 5rem;
+}
+
+/*-Forms knoppen en knoppen pseudo selectors-*/
+a:hover:not(.active),
+a:focus:not(.active),
+input:focus:read-write {
+    color: #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0.2rem 0.4rem 0 rgba(0, 0, 0, 0.2), 0 0.3rem 1rem 0 rgba(0, 0, 0);
+    transition: 500ms ease-in-out;
+}
+
+:hover {
+    transition: 500ms ease-in-out;
+
+}
+
+input:focus:invalid {
+    background-color: rgba(247, 4, 4, 0.414);
+}
+
+input:focus:valid,
+input:read-write:valid {
+    background-color: rgba(0, 128, 0, 0.438);
+    color: #ffffff
+}
+
+input,
+select {
+    padding: 1rem 1rem;
+}
+
+/*-Blauwe Kaartjes-*/
+.card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.card {
+    display: flex;
+    background-color: #1a9dee;
+    border: 0.1rem solid black;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+.card a {
+    padding: 1rem 2rem;
+    border-radius: 5%;
+    margin: 1rem;
+}
+
+/*-Links zonder achtergrond(Privacybeleid & Vluchtnummers links)-*/
+.normale-knop {
+    padding: 0;
+    background-color: #00000000;
+    color: rgb(27, 186, 186);
+    border: 0;
+    box-shadow: none;
+
+}
+
+.normale-knop:hover {
+    padding: 1rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    form>div {
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+
+}
